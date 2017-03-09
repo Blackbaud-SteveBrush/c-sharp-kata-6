@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 namespace c_sharp_kata_6.Controllers {
 
   public class FormData {
-    public string query { get; set; }
+    public string Query { get; set; }
   }
 
   [Route("[controller]")]
@@ -15,10 +15,10 @@ namespace c_sharp_kata_6.Controllers {
 
     [HttpPost("bytes")]
     public IActionResult PostBytes(FormData formData) {
-      if (formData.query == null) {
+      if (formData.Query == null) {
         return BadRequest();
       }
-      var bytes = Encoding.ASCII.GetBytes(formData.query);
+      var bytes = Encoding.ASCII.GetBytes(formData.Query);
       var result = new Dictionary<string, byte[]>(){
         { "bytes", bytes }
       };
