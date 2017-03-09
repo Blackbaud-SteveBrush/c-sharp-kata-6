@@ -55,7 +55,7 @@
                     type: 'POST',
                     dataType: 'json',
                     url: '/parser/bytes',
-                    data: { query },
+                    data: { formData: { query } },
                     success: result => outputElement.innerText = result.bytes,
                     error: () => outputElement.innerText = 'Something bad happened.'
                 });
